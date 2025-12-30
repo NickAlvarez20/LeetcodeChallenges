@@ -14,15 +14,15 @@
 ## Project Name
 LeetCodeArrayChallengeProblems
 ## About
-A collection of solved LeetCode problems focused on Arrays and Data Structures & Algorithms (DSA). This repository contains clean, well-commented JavaScript solutions to popular array-based coding challenges, complete with explanations, time/space complexity analysis, and test cases.
+A collection of solved LeetCode problems focused on Arrays and Data Structures & Algorithms (DSA). This repository contains clean, well-commented JavaScript/Python solutions to popular array-based coding challenges, complete with explanations, time/space complexity analysis, and test cases.
 ## Prerequisites
-To run this project you need JavaScript installed on your system.
+To run this project you need JavaScript and Python installed on your system.
 Node.js is recommended for executing the solutions locally.
 No additional libraries or packages are required.
 ## Features
 This LeetCodeArrayChallengeProblems includes these features:
 
--JavaScript solutions to a variety of LeetCode array problems (Easy, Medium, and Hard).
+-JavaScript/Python solutions to a variety of LeetCode array problems (Easy, Medium, and Hard).
 
 -Detailed comments explaining the approach and logic.
 
@@ -47,7 +47,7 @@ This project helped me:
 * Master common array manipulation techniques (two pointers, sliding window, hashing, etc.).
 * Improve problem-solving speed and code optimization skills.
 * Deepen understanding of Big-O complexity analysis.
-* Strengthen JavaScript fundamentals in a real-world algorithmic context.
+* Strengthen JavaScript/Python fundamentals in a real-world algorithmic context.
 * Prepare effectively for technical coding interviews.
 
 ## Contributing
@@ -59,6 +59,6 @@ This is primarily a personal learning / portfolio repository, so formal contribu
 This repository is open and free for educational use.
 *(If you decide on a specific license later, insert it here — e.g. MIT, Apache 2.0, etc.)*
 ## Credits & Acknowledgements
-This project was created by NickAlvarez20 as part of my journey to master JavaScript and Data Structures & Algorithms through LeetCode practice. Check out my other repositories to see more of my work!
+This project was created by NickAlvarez20 as part of my journey to master JavaScript/Python and Data Structures & Algorithms through LeetCode practice. Check out my other repositories to see more of my work!
 ## Contact
 You can find more of my work at [NickAlvarez20 on GitHub](https://github.com/NickAlvarez20).
