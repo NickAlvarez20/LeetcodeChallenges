@@ -21,4 +21,4 @@ class Solution:
 # Alternative methods. 
 # 1.Optimal solution - Iterate from the end. O(n) time and O(1) space 
 # - Create a variable that starts with the length minus 1. A while loop that skips trailing spaces and then count the characters of the last word.
-# - 2. Use R split. Split from the right, ignoring trailing spaces. Clean one liner using Pythons built-in string methods. Or split. Automatically handles trailing spaces, unlike regular split. Very readable and concise. Time complexity: O(n) Space O(n)What the **** is this dude? Oh my God. 
+# - 2. Use R split. Split from the right, ignoring trailing spaces. Clean one liner using Pythons built-in string methods. Or split. Automatically handles trailing spaces, unlike regular split. Very readable and concise. Time complexity: O(n) Space O(n)
