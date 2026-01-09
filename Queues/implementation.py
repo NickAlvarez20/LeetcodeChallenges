@@ -69,3 +69,76 @@ print("After dequeue: ", queueOne.queue)
 print("Is Empty?: ", queueOne.isEmpty())
 # Check size
 print("Size: ", queueOne.size())
+
+
+# Queue implementation using linked list
+
+
+# init Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# init Queue class
+class QueueLL:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+        self.length = 0
+
+    def enqueue(self, element):
+        new_node = Node(element)  # init new node
+        if self.rear is None:
+            self.front = self.rear = new_node
+            self.length += 1
+            return
+        self.rear.next = new_node
+        self.rear = new_node
+        self.length += 1
+
+    def dequeue(self):
+        if self.isEmpty():
+            return "Queue is empty"
+        temp = self.front
+        self.front = temp.next
+        self.length -= 1
+        if self.front is None:
+            self.rear = None
+        return temp.data
+
+    def peek(self):
+        if self.isEmpty():
+            return "Queue is empty"
+        return self.front.data
+
+    def isEmpty(self):
+        return self.length == 0
+
+    def size(self):
+        return self.length
+
+    def printQueue(self):
+        temp = self.front
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print()
+
+
+# Create a queue
+myQueue = QueueLL()
+
+myQueue.enqueue("A")
+myQueue.enqueue("B")
+myQueue.enqueue("C")
+
+print("Queue: ", end="")
+myQueue.printQueue()
+print("Peek: ", myQueue.peek())
+print("Dequeue: ", myQueue.dequeue())
+print("Queue after Dequeue: ", end="")
+myQueue.printQueue()
+print("isEmpty: ", myQueue.isEmpty())
+print("Size: ", myQueue.size())
