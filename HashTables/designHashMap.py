@@ -60,4 +60,4 @@ class MyHashMap:
 # Alternative solutions
 # 1. An alternative solution would be to implement a linked list and update the pointers this one is a little bit nuanced it does have some ways that it theoretically makes sense but it is definitely tougher to grasp at first when you're 1st learning and especially considering this is an easy problem
 # 2. Another way to do this is not how it is supposed to be recommended you could do a simple return one liner for the any given index that one's also not recommended
-# 3. You could also use a or dictionary
+# 3. You could also use dictionary
