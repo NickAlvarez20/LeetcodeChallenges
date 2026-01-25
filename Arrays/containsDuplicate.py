@@ -42,3 +42,16 @@ def containsDuplicate(self, nums: list[int]) -> bool:
     if len(create_Set) < len(nums):
         return True
     return False
+
+# The intuition is straightforward usually a set or a frequency dictionary We can also do previous index checks using a two pointers technique or we could do a length check of the set and compare it to the original. at first though it was saying frequency or set. 
+
+# 1. The optimal algorithm uses a set so we declare a set in a variable called NUM set
+# 2. Then we loop through using a for in loop
+# 3. We check if numb in the set then we can return true
+# 4. If the number is not in the set then we add it to the set using the method add and the NUM that we are currently on
+# 5. If after all the evaluations are completed and we have not found the nonexisting in the set then we return false
+
+
+# Analysis: The runtime was eight milliseconds it beats 81.13% and the memory is 31.25 megabits it beats 66.61% this places it in the top 10% of answers.
+
+# We discussed the alternative solutions and just to reiterate we can do a frequency dictionary we can do a set we can do a set length compared to the original length and the last one we could do is a sort where we compare the next index to the previous index in a sorted array this will ensure that any value after the current index matches the current value of the index we are currently on that will indicate it's good. 
