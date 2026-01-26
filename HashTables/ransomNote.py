@@ -21,11 +21,14 @@ class Solution:
     # 5. We return false if we find that the frequency value for each associated character within our frequency dictionary of ransom is greater than its counterpart within the frequency dictionary of the magazine.
     # 6. Otherwise we return true this means that there is greater than or equal to letters which allows us to reconstruct properly.
 
-    # Time complexity: O(n)
-    # 1. Time complexity is O of N considering we have to scan the entire frequency dictionary for ransom.
-    # Using the conditional check this is of constant access using the keys to access the values so for each iteration it results in constant access of the frequency dictionary which allows us to look at the value associated with the key which is the whole point of learning hash maps.
-    # Space complexity: O(n)
-    # 1. The space complexity is O of one considering the fact that we have to build a frequency dictionary for both ransom and magazine creating a copy which results in O(n) space for holding these variables
+    # Time complexity: O(m+n)
+    # 1. Time complexity is O of m+n
+    # Create encounter magazine frequency dictionary takes O(m) time and counter random note takes O(n) time
+    # The for loop runs K times where K is the number of unique characters in the ransom note since there are at most 26 lowercase English letters this part is typically O(1) or O(k)
+    # Dictionary access is O(1) on average
+    # Space complexity: O(1)
+    # 1. The problem constraints usually specify that the input consists of lowercase English letters therefore dictionaries will never store more than 26 keys regardless of how long the strings are since 26 is a constant the space is O(1)
+    #If the character set was infinite then it would be O(k) where K is the number of unique characters
 
     # Analysis: This current solution that I built is 7 millisecond runtime beats 94.5% of all answers and the memory is 19.74 megabyte and it beats 13.76%. This leads me to question the memory usage of the counter frequency dictionary as it could be optimized it looks like the lower end of the threshold is 17.1 megabytes. The solution stands within the top 10% of all answers combining runtime and memory usage.
 
