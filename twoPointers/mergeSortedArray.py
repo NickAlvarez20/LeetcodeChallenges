@@ -1,19 +1,6 @@
 class Solution:
     def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
-        counter = 0
-        # One initial pass to update the zero's
-        for i in range(0, len(nums1)):
-            if nums1[i] == 0 and counter < len(nums2):
-                nums1[i] = nums2[counter]
-                counter += 1
-        for i in range(len(nums1)):
-            left, right = 0, 1
-            while left < len(nums1):
-                if nums1[left] > nums1[right]:
-                    nums1[left], nums1[right] = nums1[right], nums1[left]
-                left += 1
-                right += 1
-        return nums1
+        
 
 
 test = [1,2,3,0,0,0] [1,2,3,2,5,6]
