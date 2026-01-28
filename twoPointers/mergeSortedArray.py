@@ -44,7 +44,7 @@ print(Solution1.merge(test, 3, testTwo, 3))
 
 
 # Alternative Approach:
-# Using counter and updates to concurrently traverse and update any matches with 0 within first array, then set value equal to index position from 2nd array, then using sort
+# 1. Using counter and updates to concurrently traverse and update any matches with 0 within first array, then set value equal to index position from 2nd array, then using sort
 # class Solution:
 # def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
 #     counter = 0
@@ -58,7 +58,7 @@ print(Solution1.merge(test, 3, testTwo, 3))
 # So the runtime is zero milliseconds it beats 100% of solutions and the memory is 19.40 megabytes beats 28.69% of solutions. This is actually not how you're supposed to solve it because of the zeros that are just placeholders but it works we just use the sort of the newly updated array and it sorts it and solves the problem.
 
 
-# Loop and replace with counter, then use bubble sort and swap to sort
+# 2. Loop and replace with counter, then use bubble sort and swap to sort
 # class Solution:
 #     def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
 #         counter = 0
@@ -76,7 +76,7 @@ print(Solution1.merge(test, 3, testTwo, 3))
 #                 right += 1
 #         return nums1
 
-
+# extra logic from problem solving
 # if nums1[r] < nums2[r2]:
 #                 nums1[r], nums2[r2] = nums2[r2], nums1[r]
 #                 r2 -= 1
