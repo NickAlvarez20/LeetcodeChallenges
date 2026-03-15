@@ -10,7 +10,7 @@
 # Complexity:
 # Time: O(n*m)
 # We iterate through in sentences and splitting each sentence takes old M time where N is the number of characters
-# 
+# 100% best answer, beats 100%
 #
 # Space: O(m)
 # Each split method creates a temporary list proportional to the number of words in that sentence 
