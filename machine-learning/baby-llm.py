@@ -1,15 +1,59 @@
 import numpy as np
+import random
 
 # 1. The "Internet" Dataset (More patterns to learn)
-data = """
-ai is cool ai is fast ai is smart
-coding is fun coding is power coding is logic
-flowers are red flowers are blue flowers are pretty
-ai is the future coding is the way
-"""
-words = data.lower().split()
+# Core vocabulary for the "Internet"
+subjects = [
+    "ai",
+    "coding",
+    "python",
+    "data",
+    "ml",
+    "robotics",
+    "software",
+    "innovation",
+    "science",
+    "math",
+]
+verbs = ["is", "makes", "creates", "drives", "fuels", "powers", "enables"]
+adjectives = [
+    "fast",
+    "cool",
+    "smart",
+    "efficient",
+    "powerful",
+    "fun",
+    "complex",
+    "logical",
+    "creative",
+    "bold",
+]
+connectors = ["and", "because", "while", "but", "so"]
+
+sentences = []
+# Generate roughly 500 sentences to hit the 2,000+ word mark
+for _ in range(500):
+    s, v, a = random.choice(subjects), random.choice(verbs), random.choice(adjectives)
+    sentence = f"{s} {v} {a}"
+
+    # Randomly add a second part to the sentence to create variety
+    if random.random() > 0.5:
+        c = random.choice(connectors)
+        s2, v2, a2 = (
+            random.choice(subjects),
+            random.choice(verbs),
+            random.choice(adjectives),
+        )
+        sentence += f" {c} {s2} {v2} {a2}"
+
+    sentences.append(sentence)
+
+# This is your final 2,000+ word string
+data = " ".join(sentences)
+print(f"Dataset generated! Total words: {len(data.split())}")
 
 # 2. Build a Vocabulary (The unique words the model knows)
+words = data.lower().split()
 vocab = sorted(list(set(words)))
 word_to_int = {w: i for i, w in enumerate(vocab)}
 int_to_word = {i: w for i, w in enumerate(vocab)}
