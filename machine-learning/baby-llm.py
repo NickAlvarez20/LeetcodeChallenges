@@ -32,7 +32,7 @@ connectors = ["and", "because", "while", "but", "so"]
 
 sentences = []
 # Generate roughly 500 sentences to hit the 2,000+ word mark
-for _ in range(500):
+for _ in range(5000000):
     s, v, a = random.choice(subjects), random.choice(verbs), random.choice(adjectives)
     sentence = f"{s} {v} {a}"
 
