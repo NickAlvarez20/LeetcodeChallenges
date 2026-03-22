@@ -19,6 +19,7 @@
 #
 # Space: O(n)
 # Space complexity is also linear two separate DQ data structures are used to store the students and sandwiches each potentially holding up to N elements initially. With space required grows in direct proportion to the initial size of the input list. 
+#
 
 
 from collections import deque
