@@ -20,4 +20,3 @@ ch_dict = {
 }
 
 
-print(ch_dict)
