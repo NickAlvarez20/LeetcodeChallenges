@@ -8,3 +8,5 @@ class Solution:
                     count += 1
                     break
         return len(split_str) - count
+
+# Top solution, beats 100% and memory beats 93.97%
