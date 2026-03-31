@@ -27,6 +27,24 @@ class Solution:
             seen.add(curr)
             curr = curr.next
         return False
+    
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                return True
+        return False
+        
 
 
 # Intuition: Traverse the linked list and use a previously encountered set to determine if we have already seen that node Traverse the linked list and for each part we want to see if current is in the previously encountered list if it is then we can say return true else we return false.
