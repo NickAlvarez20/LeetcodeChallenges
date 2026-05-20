@@ -12,3 +12,4 @@ class Solution:
                 counts_2[num] = counts_2.get(num, 0) + 1
 
         return [sum(counts_1.values()), sum(counts_2.values())] # returns sum of all values within dictionary
+    
