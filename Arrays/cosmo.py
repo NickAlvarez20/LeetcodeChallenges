@@ -1,27 +1,21 @@
+import math
+
+
 def solution(numbers):
-    n = len(numbers)
-    result = []
-
+    n = len(numbers)  # len of original arr
+    result = []  # for determining pairs
+    result_two = []  # for sums of pairs
+    slice_len = 0  # determine the slice length
+    # grab the pairs
     for i in range(n):
-        # reverse the current elem, and store for later use
-        reverse_elem = str(numbers[i])[::-1]
-        int_reverse = int(reverse_elem)
-        original_num = str(int_reverse)[::-1]
-        original_num_int = int(original_num)
+        result.append([numbers[i], numbers[n - i - 1]])
 
-        # iterate through check if current elem has a reverse_elem, if not skip with pass
-        if numbers[i] == original_num_int and int_reverse in numbers:
-            result.append((numbers[i], int(reverse_elem)))
-        elif int_reverse == original_num_int and int_reverse in numbers:
-            result.append((numbers[i], int(reverse_elem)))
-        else:
-            pass
-    return result
-
-
-nums = [10, 1, 20, 2]
-
-
-test_case = solution(nums)
-
-print(test_case)
+    slice_len = math.ceil(len(result) / 2)  # accounts for odd and even arrs
+    sliced_result = result[
+        0:slice_len:1
+    ]  # slice and store the array of pairs up to a certain point
+    len_new_arr = len(sliced_result)  # len of new sliced result
+    # sum the pairs and output to new result arr
+    for i in range(len_new_arr):
+        result_two.append(sum(sliced_result[i]))
+    return result_two
