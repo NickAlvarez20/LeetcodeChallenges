@@ -1,11 +1,14 @@
 def special_order(inputString):
-    result = ""  # init result
-    length = len(inputString)  # grab length
+    # create result var for updating string 
+    result = ''
+    # create length for easier readability
+    length = len(inputString)
 
+    # iterate through and build string starting from back of loop
     for i in range(length // 2 + length % 2):
-        result += inputString[length - 1 - i]
+        result += inputString[length-1-i]
     for i in range(length // 2 + length % 2):
-        if length - 1 - i != i:
+        if length - 1 - i != i: # checks for odd indices, so if i doesn't equal the index like 4 then add it, this prevents duplicates
             result += inputString[i]
     return result
 
