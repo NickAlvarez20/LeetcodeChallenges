@@ -2,15 +2,23 @@ import math
 
 
 def solution(n):
-    result = 0
-    curr_class = int(math.log10(n) + 1)
-    # get rid of trailing 0's
+    new_num = 0
+    curr_power_count = 1
+    first_num = n
+
     while n > 0:
-        digit = n % 10  # grabs last digit
-        curr_class = int(math.log10(n))
-        if digit == 0:
-            pass
+        if n == first_num:
+            digit = n % 10
+            curr_val = digit * 11
+            new_num = curr_val
+            curr_power_count += 1
+            n = n // 10
         else:
-            result += digit * math.pow(10, curr_class)
-        n = n // 10  # removes last digit
-    return int(result)
+            digit = n % 10
+            curr_val = digit * 11  # 33
+            curr_pow = math.pow(10, curr_power_count)
+            new_num += curr_val * curr_pow
+            curr_power_count += 2
+            n = n // 10
+
+    return int(new_num)
