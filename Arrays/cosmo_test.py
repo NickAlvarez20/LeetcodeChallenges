@@ -1,44 +1,38 @@
-import os
-import sys
 import unittest
-
-# These lines are important!
-currentdir = os.path.dirname(os.path.abspath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir)
-
 from cosmo import solution
+
 
 class SolutionTests(unittest.TestCase):
     def test1(self):
-        self.assertEqual(solution(1234), 11223344)
+        self.assertEqual(solution(113224), 2)
 
     def test2(self):
-        self.assertEqual(solution(1), 11)
+        self.assertEqual(solution(33333888), 6)
 
     def test3(self):
-        self.assertEqual(solution(22), 2222)
+        self.assertEqual(solution(13579), 0)
 
     def test4(self):
-        self.assertEqual(solution(9876), 99887766)
+        self.assertEqual(solution(345672), 0)
 
     def test5(self):
-        self.assertEqual(solution(10000), 1100000000)
+        self.assertEqual(solution(22333555), 5)
 
     def test6(self):
-        self.assertEqual(solution(0), 0)
+        self.assertEqual(solution(100000), 4)
 
     def test7(self):
-        self.assertEqual(solution(3333), 33333333)
+        self.assertEqual(solution(10), 0)
 
     def test8(self):
-        self.assertEqual(solution(4444), 44444444)
+        self.assertEqual(solution(98876), 1)
 
     def test9(self):
-        self.assertEqual(solution(5555), 55555555)
+        self.assertEqual(solution(4444), 3)
 
     def test10(self):
-        self.assertEqual(solution(6666), 66666666)
+        self.assertEqual(solution(1), 0)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
