@@ -7,7 +7,6 @@ def special_order(inputString):
     for i in range(length // 2 + length % 2):
         if length - 1 - i != i:
             result += inputString[i]
-
     return result
 
 
