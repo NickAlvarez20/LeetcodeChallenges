@@ -1,16 +1,17 @@
-def special_order(inputString):
-    result = ""
-    length = len(inputString)
+# so after a we update the next position with d, which is 3 chars to the left of a
 
-    for i in range(length // 2 + length % 2):
-        result += inputString[length - 1 - i]
-    for i in range(length // 2 + length % 2):
-        if length - 1 - i != i:
-            result += inputString[i]
+
+def repeat_char_jump(inputString, k):
+    result = str(inputString[0])  # init first char
+    length = len(inputString)
+    current_index = 0
+
+    while len(result) < length:
+        current_index = (current_index + k) % length
+        result += inputString[current_index]
 
     return result
 
 
-test = special_order("abcdefghijklmnopqrstuvwxyz" * 4 + "abcd")
-
+test = repeat_char_jump("abcdefghij", 9)
 print(test)
