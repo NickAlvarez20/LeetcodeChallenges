@@ -1,5 +1,5 @@
 def special_order(inputString):
-    result = ""
+    result = ''
     length = len(inputString)
 
     for i in range(length // 2 + length % 2):
