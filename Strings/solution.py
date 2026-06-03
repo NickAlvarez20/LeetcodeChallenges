@@ -1,18 +1,21 @@
-def reversed_triple_chars(s: str) -> str:
-    result = ""
-    for i in range(0, len(s), 3):
-        curr_slice = s[i : i + 3]
-        length = len(curr_slice)
-        reverse_slice = curr_slice[::-1]
-        if len(curr_slice) == 3:
-            result += reverse_slice
-        else:
-            result += curr_slice
-    return result
+def solution(numbers):
+    middle = len(numbers) // 2  # middle index if odd, right = middle index if even
 
+    if len(numbers) % 2 == 1:
+        # init two pointers
+        left = middle - 1
+        right = middle + 1
+        # establish middle points
+        multiplied = [numbers[middle]]
+    else:
+        left = middle - 1
+        right = middle
+        multiplied = []
 
-test = reversed_triple_chars("abcdef")
+    # utilize a while loop to traverse and construct multiplied
+    while left >= 0 and right < len(numbers):
+        multiplied.append(numbers[left] * numbers[right])
+        left -= 1
+        right += 1
 
-# outputs cbafed
-
-print(test)
+    return multiplied
