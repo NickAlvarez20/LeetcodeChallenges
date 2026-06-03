@@ -1,43 +1,33 @@
 import unittest
-from solution import repeat_char_jump
+from solution import reversed_triple_chars
 
 
-class SolutionTests(unittest.TestCase):
-    def test1(self):
-        self.assertEqual(repeat_char_jump("abcdefg", 3), "adgcfbe")
+class TestReversedTripleChars(unittest.TestCase):
+    def test_1(self):
+        self.assertEqual(reversed_triple_chars("abcdef"), "cbafed")
 
-    def test2(self):
-        self.assertEqual(repeat_char_jump("a", 1), "a")
+    def test_2(self):
+        self.assertEqual(reversed_triple_chars("s"), "s")
 
-    def test3(self):
-        self.assertEqual(repeat_char_jump("av", 1), "av")
-
-    def test4(self):
-        self.assertEqual(repeat_char_jump("cgldxdv", 4), "cxgdlvd")
-
-    def test5(self):
-        self.assertEqual(repeat_char_jump("z", 1), "z")
-
-    def test6(self):
-        self.assertEqual(repeat_char_jump("aaa", 2), "aaa")
-
-    def test7(self):
+    def test_3(self):
         self.assertEqual(
-            repeat_char_jump("zyxwvutsrqponmlkjihgfedcba", 5),
-            "zupkfavqlgbwrmhcxsnidytoje",
+            reversed_triple_chars("reversedtriplechars"), "versretdepircelrahs"
         )
 
-    def test8(self):
-        self.assertEqual(
-            repeat_char_jump("zyxwvutsrqponmlkjihgfedcba", 15),
-            "zkvgrcnyjufqbmxitepalwhsdo",
-        )
+    def test_4(self):
+        self.assertEqual(reversed_triple_chars("abc"), "cba")
 
-    def test9(self):
-        self.assertEqual(repeat_char_jump("abcdefghij", 1), "abcdefghij")
+    def test_5(self):
+        self.assertEqual(reversed_triple_chars("hello"), "lehlo")
 
-    def test10(self):
-        self.assertEqual(repeat_char_jump("abcdefghij", 9), "ajihgfedcb")
+    def test_6(self):
+        self.assertEqual(reversed_triple_chars("abcdefg"), "cbafedg")
+
+    def test_7(self):
+        self.assertEqual(reversed_triple_chars("hellopython"), "lehpolhtyon")
+
+    def test_8(self):
+        self.assertEqual(reversed_triple_chars("ab"), "ab")
 
 
 if __name__ == "__main__":
