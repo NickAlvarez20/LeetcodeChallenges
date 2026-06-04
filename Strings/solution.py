@@ -1,15 +1,14 @@
 def solution(numbers):
-    mid = len(numbers) // 2 
+    mid = len(numbers) // 2
 
-    if len(numbers) % 2 == 1: # if odd
+    if len(numbers) % 2 == 1:
         left = mid-1
         right = mid+1
-        tup_list = [(numbers[mid], 0)] # prepend first
+        tup_list = [(numbers[mid], 0)]
     else:
         left = mid-1
         right = mid
         tup_list = []
-
     while left >= 0 and right < len(numbers):
         tup_list.append((numbers[left], numbers[right]))
         left -= 1
