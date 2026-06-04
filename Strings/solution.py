@@ -1,21 +1,27 @@
 def solution(numbers):
-    middle = len(numbers) // 2  # middle index if odd, right = middle index if even
+    # Create an array with tuple, counting from the middle, account for odd and even length based, if odd append with a 0
+    mid = len(numbers) // 2
 
+    # conditionals
     if len(numbers) % 2 == 1:
-        # init two pointers
-        left = middle - 1
-        right = middle + 1
-        # establish middle points
-        multiplied = [numbers[middle]]
+        # pointers
+        left = mid - 1
+        right = mid + 1
+        tuple_list = [(numbers[mid], 0)]  # set middle element
     else:
-        left = middle - 1
-        right = middle
-        multiplied = []
+        left = mid - 1
+        right = mid
+        tuple_list = []  # blank
 
-    # utilize a while loop to traverse and construct multiplied
     while left >= 0 and right < len(numbers):
-        multiplied.append(numbers[left] * numbers[right])
+
+        tuple_list.append((numbers[left], numbers[right]))
+        print(tuple_list)
         left -= 1
         right += 1
+    return tuple_list
 
-    return multiplied
+
+test = solution([1, 2, 3, 4, 5])
+
+print(test)
