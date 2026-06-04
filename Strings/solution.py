@@ -1,20 +1,21 @@
 def solution(numbers):
-    mid = len(numbers) // 2
+    mid = len(numbers) // 2 
 
-    if len(numbers) % 2 == 1:
+    if len(numbers) % 2 == 1: # if odd
         left = mid-1
         right = mid+1
-        list_tuples = [(numbers[mid], 0)]
+        tup_list = [(numbers[mid], 0)] # prepend first
     else:
         left = mid-1
         right = mid
-        list_tuples = []
+        tup_list = []
 
     while left >= 0 and right < len(numbers):
-        list_tuples.append((numbers[left], numbers[right]))
+        tup_list.append((numbers[left], numbers[right]))
         left -= 1
         right += 1
-    return list_tuples
+
+    return tup_list
 
 
 test = solution([1, 2, 3, 4, 5])
