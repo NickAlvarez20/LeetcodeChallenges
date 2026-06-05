@@ -1,26 +1,28 @@
-def unusual_traversal(array):
-    mid = len(array) // 2
+def unusual_traversal(arr):
+    n = len(arr)
 
-    if len(array) % 2 == 1:
-        mutated_arr = [array[mid]]
+    mid = n // 2
+
+    if n % 2 == 1:
         left = mid - 1
         right = mid + 1
+        result = [arr[mid]]
     else:
-        mutated_arr = []
         left = mid - 1
         right = mid
+        result = []
 
-    while left >= 0 or right < len(array):
+    while left >= 0 or right < n:
         if left - 1 >= 0:
-            mutated_arr.append(array[left - 1])
+            result.append(arr[left - 1])
         if left >= 0:
-            mutated_arr.append(array[left])
-        if right < len(array):
-            mutated_arr.append(array[right])
-        if right + 1 < len(array):
-            mutated_arr.append(array[right + 1])
+            result.append(arr[left])
+        if right < n:
+            result.append(arr[right])
+        if right + 1 < n:
+            result.append(arr[right + 1])
 
         left -= 2
         right += 2
 
-    return mutated_arr
+    return result
