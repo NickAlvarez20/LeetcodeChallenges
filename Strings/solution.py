@@ -10,7 +10,7 @@ def unusual_traversal(arr):
         right = mid
         result = []
 
-    while left >= 0 or right < n:
+    while left >= 0:
         if left - 1 >= 0:
             result.append(arr[left - 1])
         if left >= 0:
