@@ -1,5 +1,6 @@
 def unusual_traversal(arr):
     n, mid = len(arr), len(arr) // 2
+
     if n % 2 == 1:
         left = mid - 1
         right = mid + 1
@@ -18,6 +19,7 @@ def unusual_traversal(arr):
             result.append(arr[right])
         if right + 1 < n:
             result.append(arr[right + 1])
+
         left -= 2
         right += 2
 
