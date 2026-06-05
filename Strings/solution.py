@@ -1,7 +1,5 @@
 def unusual_traversal(arr):
-    n = len(arr)
-
-    mid = n // 2
+    n, mid = len(arr), len(arr) // 2
 
     if n % 2 == 1:
         left = mid - 1
