@@ -1,24 +1,26 @@
-def solution(numbers):
-    mid = len(numbers) // 2
+def unusual_traversal(array):
+    mid = len(array) // 2
 
-    if len(numbers) % 2 == 1:
-        left = mid-1
-        right = mid+1
-        list_tups = [(numbers[mid], 0)]
+    if len(array) % 2 == 1:
+        mutated_arr = [array[mid]]
+        left = mid - 1
+        right = mid + 1
     else:
-        left = mid-1
+        mutated_arr = []
+        left = mid - 1
         right = mid
-        list_tups = []
 
-    while left >= 0 and right < len(numbers):
-        list_tups.append((numbers[left], numbers[right]))
+    while left >= 0 or right < len(array):
+        if left - 1 >= 0:
+            mutated_arr.append(array[left - 1])
+        if left >= 0:
+            mutated_arr.append(array[left])
+        if right < len(array):
+            mutated_arr.append(array[right])
+        if right + 1 < len(array):
+            mutated_arr.append(array[right + 1])
 
-        left -= 1
-        right += 1
+        left -= 2
+        right += 2
 
-    return list_tups
-
-
-test = solution([1, 2, 3, 4, 5])
-
-print(test)
+    return mutated_arr
