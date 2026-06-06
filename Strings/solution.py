@@ -1,26 +1,33 @@
-def unusual_traversal(arr):
-    n, mid = len(arr), len(arr) // 2
+def encode_rle(s):
+    groups = []
+    current_group_char = None
+    current_group_length = 0
+    res_str = ''
 
-    if n % 2 == 1:
-        left = mid - 1
-        right = mid + 1
-        result = [arr[mid]]
-    else:
-        left = mid - 1
-        right = mid
-        result = []
+    # iterate through 
+    for char in s:
+        if char.isdigit() or char.isalpha():
+            if char == current_group_char:
+                current_group_length += 1
+            else:
+                if current_group_char is not None:
+                    groups.append((current_group_char, current_group_length))
+                current_group_char = char
+                current_group_length = 1
+    if current_group_char is not None:
+        groups.append((current_group_char, current_group_length))
 
-    while left >= 0 or right < n:
-        if left - 1 >= 0:
-            result.append(arr[left - 1])
-        if left >= 0:
-            result.append(arr[left])
-        if right < n:
-            result.append(arr[right])
-        if right + 1 < n:
-            result.append(arr[right + 1])
+    for char, length in groups:
+        res_str += f"{char}{length}"
 
-        left -= 2
-        right += 2
+    return res_str
 
-    return result
+    
+             
+
+
+
+
+
+
+print(encode_rle("aaa@@bb!!c#d**e"))
