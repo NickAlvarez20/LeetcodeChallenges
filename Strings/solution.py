@@ -1,26 +1,23 @@
-def encode_rle(s):
+def solution(s):
     groups = []
     curr_group_char = None
-    curr_group_len = 0
-    res = ""
+    curr_group_length = 0
 
     for char in s:
-        if char.isalnum():
-            if char == curr_group_char:
-                curr_group_len += 1
-            else:
-                if curr_group_char is not None:
-                    groups.append((curr_group_char, curr_group_len))
-                curr_group_char = char
-                curr_group_len = 1
+        if char == curr_group_char:
+            curr_group_length += 1
+        else:
+            if curr_group_char is not None:
+                groups.append((curr_group_char, curr_group_length))
+            curr_group_char = char
+            curr_group_length = 1
 
     if curr_group_char is not None:
-        groups.append((curr_group_char, curr_group_len))
+        groups.append((curr_group_char, curr_group_length))
 
-    for char, length in groups:
-        res += f"{char}{length}"
+    groups.reverse()
 
-    return res
+    return groups
 
 
-print(encode_rle("aaa@@bb!!c#d**e"))
+print(solution("aaabbcccdde"))
