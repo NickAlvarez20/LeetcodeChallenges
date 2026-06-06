@@ -4,7 +4,6 @@ def encode_rle(s):
     current_group_length = 0
     res_str = ''
 
-    # iterate through 
     for char in s:
         if char.isdigit() or char.isalpha():
             if char == current_group_char:
@@ -21,13 +20,6 @@ def encode_rle(s):
         res_str += f"{char}{length}"
 
     return res_str
-
-    
-             
-
-
-
-
 
 
 print(encode_rle("aaa@@bb!!c#d**e"))
