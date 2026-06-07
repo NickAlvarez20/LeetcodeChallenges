@@ -1,33 +1,51 @@
+import os
+import sys
 import unittest
+
+# These lines are important!
+currentdir = os.path.dirname(os.path.abspath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0, parentdir)
+
 from solution import solution
 
 
-class TestSolution(unittest.TestCase):
-    def test_input_1(self):
-        self.assertEqual(solution("abc 123 def ghi"), "cab 312 fde igh")
+class SolutionTests(unittest.TestCase):
+    def test1(self):
+        self.assertEqual(solution("Hello"), "Svool")
 
-    def test_input_2(self):
-        self.assertEqual(solution("bat"), "tba")
+    def test2(self):
+        self.assertEqual(solution("ABC"), "ZYX")
 
-    def test_input_3(self):
-        self.assertEqual(solution("raceCar"), "rraceCa")
+    def test3(self):
+        self.assertEqual(solution("abc"), "zyx")
 
-    def test_input_4(self):
-        self.assertEqual(solution("mAnGo666 TaCo123i"), "6mAnGo66 iTaCo123")
-
-    def test_input_5(self):
-        self.assertEqual(solution("_ab 77Y UwF88"), "b_a Y77 8UwF8")
-
-    def test_input_6(self):
-        self.assertEqual(solution("SingleWord"), "dSingleWor")
-
-    def test_input_7(self):
-        self.assertEqual(solution("abcdefghij"), "jabcdefghi")
-
-    def test_input_8(self):
+    def test4(self):
         self.assertEqual(
-            solution("ZzZzZzZ 1234567890 zYxWvUtS"), "ZZzZzZz 0123456789 SzYxWvUt"
+            solution("A quick brown FOX jumps over the lazy DOG"),
+            "WLT Z jfrxp yildm ULC qfnkh levi gsv ozab",
         )
+
+    def test5(self):
+        self.assertEqual(solution("Zebra"), "Avyiz")
+
+    def test6(self):
+        self.assertEqual(solution("CapitaL letters"), "ovggvih XzkrgzO")
+
+    def test7(self):
+        self.assertEqual(solution("loWer letters"), "ovggvih olDvi")
+
+    def test8(self):
+        self.assertEqual(solution("OPPOSITE letters"), "ovggvih LKKLHRGV")
+
+    def test9(self):
+        self.assertEqual(
+            solution("An apple a day keeps the doctor away"),
+            "zdzb Zm zkkov z wzb pvvkh gsv wlxgli",
+        )
+
+    def test10(self):
+        self.assertEqual(solution("m n"), "m n")
 
 
 if __name__ == "__main__":
