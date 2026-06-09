@@ -1,19 +1,16 @@
 def solution(input_str):
-    words = input_str.split(" ")
-    reversed_words = ""
-    reversed_list = []
-    print(words)
+    split_str = input_str.split()
+    result = ''
 
-    for word in words:
-        reversed_words = ""
-        for char in word:
-            if char.isupper():
-                reversed_words += chr(155 - ord(char))
-            elif char.islower():
-                reversed_words += chr(219 - ord(char))
-        reversed_list.append(reversed_words)
-    
-    return " ".join(reversed_list[-1:]+reversed_list[:-1])
+    for word in split_str:
+        if word[0].isalpha():
+            word = word[0].upper() + word[1:].lower()
+            result += word + " "
+        else:
+            word = word[0] + word[1:].lower()
+            result += word + " "
+        
 
+    return "".join(result).rstrip()
 
-print(solution("A quick brown FOX jumps over the lazy DOG"))
+print(solution("hello world"))

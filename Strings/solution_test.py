@@ -1,51 +1,44 @@
-import os
-import sys
 import unittest
-
-# These lines are important!
-currentdir = os.path.dirname(os.path.abspath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir)
-
 from solution import solution
 
 
 class SolutionTests(unittest.TestCase):
-    def test1(self):
-        self.assertEqual(solution("Hello"), "Svool")
+    def test_1(self):
+        self.assertEqual(solution("hello world"), "Hello World")
 
-    def test2(self):
-        self.assertEqual(solution("ABC"), "ZYX")
+    def test_2(self):
+        self.assertEqual(solution("HELLO WORLD"), "Hello World")
 
-    def test3(self):
-        self.assertEqual(solution("abc"), "zyx")
+    def test_3(self):
+        self.assertEqual(solution("123 hello"), "123 Hello")
 
-    def test4(self):
+    def test_4(self):
+        self.assertEqual(solution("_underscore"), "_underscore")
+
+    def test_5(self):
         self.assertEqual(
-            solution("A quick brown FOX jumps over the lazy DOG"),
-            "WLT Z jfrxp yildm ULC qfnkh levi gsv ozab",
+            solution(
+                "first second third fourth fifth sixth seventh eights ninth tenth"
+            ),
+            "First Second Third Fourth Fifth Sixth Seventh Eights Ninth Tenth",
         )
 
-    def test5(self):
-        self.assertEqual(solution("Zebra"), "Avyiz")
+    def test_6(self):
+        self.assertEqual(solution("single"), "Single")
 
-    def test6(self):
-        self.assertEqual(solution("CapitaL letters"), "ovggvih XzkrgzO")
-
-    def test7(self):
-        self.assertEqual(solution("loWer letters"), "ovggvih olDvi")
-
-    def test8(self):
-        self.assertEqual(solution("OPPOSITE letters"), "ovggvih LKKLHRGV")
-
-    def test9(self):
+    def test_7(self):
         self.assertEqual(
-            solution("An apple a day keeps the doctor away"),
-            "zdzb Zm zkkov z wzb pvvkh gsv wlxgli",
+            solution("Hello neat pythonistas_123"), "Hello Neat Pythonistas_123"
         )
 
-    def test10(self):
-        self.assertEqual(solution("m n"), "m n")
+    def test_8(self):
+        self.assertEqual(solution("SoME rAndoM _TeXT"), "Some Random _text")
+
+    def test_9(self):
+        self.assertEqual(solution("CAPS lock IS on"), "Caps Lock Is On")
+
+    def test_10(self):
+        self.assertEqual(solution("mIxEd CaSe sample"), "Mixed Case Sample")
 
 
 if __name__ == "__main__":
