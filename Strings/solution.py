@@ -1,16 +1,13 @@
-def solution(input_str):
-    split_str = input_str.split()
-    result = ''
+def solution(s):
+    split_str = s.split("-")
+    result =[]
 
-    for word in split_str:
-        if word[0].isalpha():
-            word = word[0].upper() + word[1:].lower()
-            result += word + " "
-        else:
-            word = word[0] + word[1:].lower()
-            result += word + " "
-        
+    for char in split_str:
+        if char.isalpha():
+            result.append(str(ord((char))-96)) # turns a-> 1
+        elif char.isdigit():
+            result.append(str(chr(96+int(char)))) # turns 1 -> a
+    return "-".join(result)
 
-    return "".join(result).rstrip()
 
-print(solution("hello world"))
+print(solution("a-b-c-1-2-3-x-y-z-24-25-26"))

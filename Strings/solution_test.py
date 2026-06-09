@@ -3,42 +3,40 @@ from solution import solution
 
 
 class SolutionTests(unittest.TestCase):
-    def test_1(self):
-        self.assertEqual(solution("hello world"), "Hello World")
 
-    def test_2(self):
-        self.assertEqual(solution("HELLO WORLD"), "Hello World")
+    def test1(self):
+        self.assertEqual(solution("1-2-3-4-5"), "a-b-c-d-e")
 
-    def test_3(self):
-        self.assertEqual(solution("123 hello"), "123 Hello")
+    def test2(self):
+        self.assertEqual(solution("a-b-c"), "1-2-3")
 
-    def test_4(self):
-        self.assertEqual(solution("_underscore"), "_underscore")
+    def test3(self):
+        self.assertEqual(solution("1-a-3-c-5"), "a-1-c-3-e")
 
-    def test_5(self):
+    def test4(self):
+        self.assertEqual(solution("z-y-x-w-v"), "26-25-24-23-22")
+
+    def test5(self):
+        self.assertEqual(solution("a-26-b-25-c-24"), "1-z-2-y-3-x")
+
+    def test6(self):
+        self.assertEqual(solution("13-9-14-15"), "m-i-n-o")
+
+    def test7(self):
+        self.assertEqual(solution("12-1-18-9-1"), "l-a-r-i-a")
+
+    def test8(self):
+        self.assertEqual(solution("19-15-12-21-20-9-15-14"), "s-o-l-u-t-i-o-n")
+
+    def test9(self):
         self.assertEqual(
-            solution(
-                "first second third fourth fifth sixth seventh eights ninth tenth"
-            ),
-            "First Second Third Fourth Fifth Sixth Seventh Eights Ninth Tenth",
+            solution("a-b-c-1-2-3-x-y-z-24-25-26"), "1-2-3-a-b-c-24-25-26-x-y-z"
         )
 
-    def test_6(self):
-        self.assertEqual(solution("single"), "Single")
-
-    def test_7(self):
+    def test10(self):
         self.assertEqual(
-            solution("Hello neat pythonistas_123"), "Hello Neat Pythonistas_123"
+            solution("16-9-20-8-15-14-3-8-1-18-13-1"), "p-i-t-h-o-n-c-h-a-r-m-a"
         )
-
-    def test_8(self):
-        self.assertEqual(solution("SoME rAndoM _TeXT"), "Some Random _text")
-
-    def test_9(self):
-        self.assertEqual(solution("CAPS lock IS on"), "Caps Lock Is On")
-
-    def test_10(self):
-        self.assertEqual(solution("mIxEd CaSe sample"), "Mixed Case Sample")
 
 
 if __name__ == "__main__":
