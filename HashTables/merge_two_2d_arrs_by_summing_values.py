@@ -17,7 +17,9 @@ class Solution:
 
         total_count = nums1_count + nums2_count
 
-        change_to_list = list(total_count.items())
-        change_to_list.sort()
+        change_to_list = list(
+            total_count.items()
+        )  # items creates key,val pair for list, nested arrs
+        change_to_list.sort()  # mutates original list, optimizes memory
 
         return change_to_list
