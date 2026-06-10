@@ -5,21 +5,10 @@ class Solution:
     def mergeArrays(
         self, nums1: List[List[int]], nums2: List[List[int]]
     ) -> List[List[int]]:
-        # create 2 counters
-        nums1_count = Counter()
-        nums2_count = Counter()
+        # Direct conversion to list from the merged Counter
+        change_to_list = list((Counter(dict(nums1)) + Counter(dict(nums2))).items())
 
-        for index, val in enumerate(nums1):
-            nums1_count[val[0]] = val[1]
-
-        for index, val in enumerate(nums2):
-            nums2_count[val[0]] = val[1]
-
-        total_count = nums1_count + nums2_count
-
-        change_to_list = list(
-            total_count.items()
-        )  # items creates key,val pair for list, nested arrs
-        change_to_list.sort()  # mutates original list, optimizes memory
+        # Sort in-place to avoid creating a second list copy
+        change_to_list.sort()
 
         return change_to_list
