@@ -3,40 +3,54 @@ from solution import solution
 
 
 class SolutionTests(unittest.TestCase):
-
-    def test1(self):
-        self.assertEqual(solution("1-2-3-4-5"), "a-b-c-d-e")
-
-    def test2(self):
-        self.assertEqual(solution("a-b-c"), "1-2-3")
-
-    def test3(self):
-        self.assertEqual(solution("1-a-3-c-5"), "a-1-c-3-e")
-
-    def test4(self):
-        self.assertEqual(solution("z-y-x-w-v"), "26-25-24-23-22")
-
-    def test5(self):
-        self.assertEqual(solution("a-26-b-25-c-24"), "1-z-2-y-3-x")
-
-    def test6(self):
-        self.assertEqual(solution("13-9-14-15"), "m-i-n-o")
-
-    def test7(self):
-        self.assertEqual(solution("12-1-18-9-1"), "l-a-r-i-a")
-
-    def test8(self):
-        self.assertEqual(solution("19-15-12-21-20-9-15-14"), "s-o-l-u-t-i-o-n")
-
-    def test9(self):
+    def test_1(self):
         self.assertEqual(
-            solution("a-b-c-1-2-3-x-y-z-24-25-26"), "1-2-3-a-b-c-24-25-26-x-y-z"
+            solution(
+                "joe scored 5 points, while adam scored 10 points and bob scored 2, with an extra 1 point scored by joe"
+            ),
+            18,
         )
 
-    def test10(self):
+    def test_2(self):
+        self.assertEqual(solution("michael scored 100 points"), 100)
+
+    def test_3(self):
         self.assertEqual(
-            solution("16-9-20-8-15-14-3-8-1-18-13-1"), "p-i-t-h-o-n-c-h-a-r-m-a"
+            solution("lena scored 50 points and lee scored 50 points"), 100
         )
+
+    def test_4(self):
+        self.assertEqual(
+            solution(
+                "sam scored 25 points, john scored 25 points, jim scored 25 points, and sue scored 25 points"
+            ),
+            100,
+        )
+
+    def test_5(self):
+        self.assertEqual(solution("1 point scored by max"), 1)
+
+    def test_6(self):
+        self.assertEqual(solution("no points scored in this game"), 0)
+
+    def test_7(self):
+        self.assertEqual(
+            solution(
+                "abc scored 3 points and def scored 9 points then ghi scored 27 points"
+            ),
+            39,
+        )
+
+    def test_8(self):
+        self.assertEqual(
+            solution("game score: pete 2 points, eve 4 points, zane 8 points"), 14
+        )
+
+    def test_9(self):
+        self.assertEqual(solution("jake scored1point, john scored2points"), 3)
+
+    def test_10(self):
+        self.assertEqual(solution("this game ended with no score"), 0)
 
 
 if __name__ == "__main__":
