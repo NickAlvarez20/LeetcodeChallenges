@@ -3,54 +3,62 @@ from solution import solution
 
 
 class SolutionTests(unittest.TestCase):
-    def test_1(self):
+
+    def test1(self):
         self.assertEqual(
-            solution(
-                "joe scored 5 points, while adam scored 10 points and bob scored 2, with an extra 1 point scored by joe"
-            ),
-            18,
+            solution("I have 2 apples and 5 oranges and 3 grapefruits."),
+            "I have a2pples and o5ranges and g3rapefruits.",
         )
 
-    def test_2(self):
-        self.assertEqual(solution("michael scored 100 points"), 100)
-
-    def test_3(self):
+    def test2(self):
         self.assertEqual(
-            solution("lena scored 50 points and lee scored 50 points"), 100
+            solution("4 foxes are chasing 1 rabbit."), "f4oxes are chasing r1abbit."
         )
 
-    def test_4(self):
+    def test3(self):
         self.assertEqual(
-            solution(
-                "sam scored 25 points, john scored 25 points, jim scored 25 points, and sue scored 25 points"
-            ),
-            100,
+            solution("Let's meet at 7 at the clock tower."),
+            "Let's meet at a7t the clock tower.",
         )
 
-    def test_5(self):
-        self.assertEqual(solution("1 point scored by max"), 1)
-
-    def test_6(self):
-        self.assertEqual(solution("no points scored in this game"), 0)
-
-    def test_7(self):
+    def test4(self):
         self.assertEqual(
-            solution(
-                "abc scored 3 points and def scored 9 points then ghi scored 27 points"
-            ),
-            39,
+            solution("There are 8 wonders of the world."),
+            "There are w8onders of the world.",
         )
 
-    def test_8(self):
+    def test5(self):
         self.assertEqual(
-            solution("game score: pete 2 points, eve 4 points, zane 8 points"), 14
+            solution("I will bring 6 bottles of water and 4 packets of chips."),
+            "I will bring b6ottles of water and p4ackets of chips.",
         )
 
-    def test_9(self):
-        self.assertEqual(solution("jake scored1point, john scored2points"), 3)
+    def test6(self):
+        self.assertEqual(
+            solution("It is a 9 day journey to the mountains."),
+            "It is a d9ay journey to the mountains.",
+        )
 
-    def test_10(self):
-        self.assertEqual(solution("this game ended with no score"), 0)
+    def test7(self):
+        self.assertEqual(
+            solution("She has lived in 4 cities and 2 countries."),
+            "She has lived in c4ities and c2ountries.",
+        )
+
+    def test8(self):
+        self.assertEqual(
+            solution("He walked 5 miles to school every day."),
+            "He walked m5iles to school every day.",
+        )
+
+    def test9(self):
+        self.assertEqual(solution("The city has 6 gates."), "The city has g6ates.")
+
+    def test10(self):
+        self.assertEqual(
+            solution("There are 3 books on the table."),
+            "There are b3ooks on the table.",
+        )
 
 
 if __name__ == "__main__":
