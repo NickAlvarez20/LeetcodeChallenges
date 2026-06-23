@@ -1,63 +1,70 @@
 import unittest
-from solution import solution
+from solution import add_seconds_to_times
 
 
-class SolutionTests(unittest.TestCase):
-
+class TestAddSecondsToTimes(unittest.TestCase):
     def test1(self):
         self.assertEqual(
-            solution("I have 2 apples and 5 oranges and 3 grapefruits."),
-            "I have a2pples and o5ranges and g3rapefruits.",
+            add_seconds_to_times(["10:00:00", "23:30:00"], 3600),
+            ["11:00:00", "00:30:00"],
         )
 
     def test2(self):
-        self.assertEqual(
-            solution("4 foxes are chasing 1 rabbit."), "f4oxes are chasing r1abbit."
-        )
+        self.assertEqual(add_seconds_to_times(["00:00:00"], 86399), ["23:59:59"])
 
     def test3(self):
         self.assertEqual(
-            solution("Let's meet at 7 at the clock tower."),
-            "Let's meet at a7t the clock tower.",
+            add_seconds_to_times(["01:00:00", "02:00:00", "03:00:00"], 7200),
+            ["03:00:00", "04:00:00", "05:00:00"],
         )
 
     def test4(self):
-        self.assertEqual(
-            solution("There are 8 wonders of the world."),
-            "There are w8onders of the world.",
-        )
+        self.assertEqual(add_seconds_to_times(["23:59:59"], 1), ["00:00:00"])
 
     def test5(self):
-        self.assertEqual(
-            solution("I will bring 6 bottles of water and 4 packets of chips."),
-            "I will bring b6ottles of water and p4ackets of chips.",
-        )
+        self.assertEqual(add_seconds_to_times(["12:00:00"], 43200), ["00:00:00"])
 
     def test6(self):
         self.assertEqual(
-            solution("It is a 9 day journey to the mountains."),
-            "It is a d9ay journey to the mountains.",
+            add_seconds_to_times(["23:59:01", "23:59:02", "23:59:03"], 2),
+            ["23:59:03", "23:59:04", "23:59:05"],
         )
 
     def test7(self):
         self.assertEqual(
-            solution("She has lived in 4 cities and 2 countries."),
-            "She has lived in c4ities and c2ountries.",
+            add_seconds_to_times(["13:14:15", "16:17:18", "19:20:21", "22:23:24"], 0),
+            ["13:14:15", "16:17:18", "19:20:21", "22:23:24"],
         )
 
     def test8(self):
         self.assertEqual(
-            solution("He walked 5 miles to school every day."),
-            "He walked m5iles to school every day.",
-        )
-
-    def test9(self):
-        self.assertEqual(solution("The city has 6 gates."), "The city has g6ates.")
-
-    def test10(self):
-        self.assertEqual(
-            solution("There are 3 books on the table."),
-            "There are b3ooks on the table.",
+            add_seconds_to_times(
+                [
+                    "00:00:01",
+                    "00:00:02",
+                    "00:00:03",
+                    "00:00:04",
+                    "00:00:05",
+                    "00:00:06",
+                    "00:00:07",
+                    "00:00:08",
+                    "00:00:09",
+                    "00:00:10",
+                ],
+                30,
+            ),
+            [
+                "00:00:31",
+                "00:00:32",
+                "00:00:33",
+                "00:00:34",
+                "00:00:35",
+                "00:00:36",
+                "00:00:37",
+                "00:00:38",
+                "00:00:39",
+                "00:00:40",
+            ],
         )
 
 

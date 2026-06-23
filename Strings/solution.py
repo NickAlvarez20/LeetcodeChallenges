@@ -1,27 +1,16 @@
-def solution(input_string):
-    result = ""
-    i = 0
+def add_seconds_to_times(timePoints, seconds):
+    res = []
+    for item in timePoints:
+        time_parts = [int(part) for part in item.split(":")]
+        seconds_since_start = (
+            time_parts[0] * 3600 + time_parts[1] * 60 + time_parts[2] + seconds
+        )
+        total_seconds = (seconds_since_start) % (24 * 3600)
 
-    while i < len(input_string):
-        if input_string[i].isalpha():
-            result += input_string[i]
-            i += 1
-        elif input_string[i].isdigit():
-            num = ""
-            while (
-                i < len(input_string) and input_string[i].isdigit()
-            ):  # collects the digits
-                num += input_string[i]
-                i += 1
-            while i < len(input_string) and not input_string[i].isalpha():
-                i += 1
-            result += input_string[i]
-            result += num
-            i += 1
-        else:
-            result += input_string[i]
-            i += 1
-    return result
+        hours, remainder = divmod(total_seconds, 3600)
+        minutes, second = divmod(remainder, 60)
+        res.append(f"{hours:02d}:{minutes:02d}:{second:02d}")
+    return res
 
 
-print(solution("I have 2 apples and 5 oranges and 3 grapefruits."))
+test = add_seconds_to_times(["10:00:00", "23:30:00"], 3600)
