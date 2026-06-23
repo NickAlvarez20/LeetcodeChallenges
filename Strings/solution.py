@@ -1,16 +1,20 @@
-def add_seconds_to_times(timePoints, seconds):
-    res = []
-    for item in timePoints:
+import math
+
+def time_period_length(time_period):
+    times = time_period.split("-")
+    cleansed_times = []
+    time_in_seconds = []
+    for time in times:
+        parsed_time = time.strip()
+        cleansed_times.append(parsed_time)
+
+    for item in cleansed_times:
         time_parts = [int(part) for part in item.split(":")]
-        seconds_since_start = (
-            time_parts[0] * 3600 + time_parts[1] * 60 + time_parts[2] + seconds
-        )
-        total_seconds = (seconds_since_start) % (24 * 3600)
+        seconds_since_start = time_parts[0] * 60 + time_parts[1]
+        time_in_seconds.append(seconds_since_start)
 
-        hours, remainder = divmod(total_seconds, 3600)
-        minutes, second = divmod(remainder, 60)
-        res.append(f"{hours:02d}:{minutes:02d}:{second:02d}")
-    return res
+    difference_in_seconds = time_in_seconds[1] - time_in_seconds[0]
 
+    return difference_in_seconds
 
-test = add_seconds_to_times(["10:00:00", "23:30:00"], 3600)
+print(time_period_length("12:15:30 - 14:00:00"))
