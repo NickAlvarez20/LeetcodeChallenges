@@ -1,30 +1,37 @@
 import unittest
-from solution import add_days
+from solution import replace_substring
 
-class TestFunction(unittest.TestCase):
-    def test_case_1(self):
-        self.assertEqual(add_days('1999-01-01', 365), '2000-01-01')
+class ReplaceSubstringTest(unittest.TestCase):
 
-    def test_case_2(self):
-        self.assertEqual(add_days('2000-01-01', 365), '2000-12-31')
+    def test_1(self):
+        self.assertEqual(replace_substring("hello world", "world", "friend"), "hello friend")
 
-    def test_case_3(self):
-        self.assertEqual(add_days('2000-01-01', 366), '2001-01-01')
+    def test_2(self):
+        self.assertEqual(replace_substring("i love coding", "code", "craft"), "i love coding")
 
-    def test_case_4(self):
-        self.assertEqual(add_days('2001-12-31', 1), '2002-01-01')
+    def test_3(self):
+        self.assertEqual(replace_substring("it is a beautiful day", "beautiful", "gloomy"), "it is a gloomy day")
 
-    def test_case_5(self):
-        self.assertEqual(add_days('2000-12-31', 1), '2001-01-01')
+    def test_4(self):
+        self.assertEqual(replace_substring("practice makes perfect", "perfect", "better"), "practice makes better")
 
-    def test_case_6(self):
-        self.assertEqual(add_days('2004-01-01', 1461), '2008-01-01')
+    def test_5(self):
+        self.assertEqual(replace_substring("keep calm and carry on", "carry on", "code on"), "keep calm and code on")
 
-    def test_case_7(self):
-        self.assertEqual(add_days('1899-12-31', 50000), '2036-11-22')
+    def test_6(self):
+        self.assertEqual(replace_substring("long text long text", "long", "short"), "short text short text")
 
-    def test_case_8(self):
-        self.assertEqual(add_days('2099-12-31', 50000), '2236-11-23')
+    def test_7(self):
+        self.assertEqual(replace_substring("lower case", "lower", ""), " case")
 
-if __name__ == '__main__':
+    def test_8(self):
+        self.assertEqual(replace_substring("a quick brown fox jumps over a lazy dog", "jumps", "skips"), "a quick brown fox skips over a lazy dog")
+
+    def test_9(self):
+        self.assertEqual(replace_substring("this is a test", "this", "that"), "that is a test")
+
+    def test_10(self):
+        self.assertEqual(replace_substring("final test case", "case", "example"), "final test example")
+
+if __name__ == "__main__":
     unittest.main()
