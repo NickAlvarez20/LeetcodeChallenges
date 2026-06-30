@@ -1,37 +1,102 @@
 import unittest
-from solution import replace_substring
+from solution import solution
 
-class ReplaceSubstringTest(unittest.TestCase):
 
-    def test_1(self):
-        self.assertEqual(replace_substring("hello world", "world", "friend"), "hello friend")
+class SolutionTests(unittest.TestCase):
+    def test1(self):
+        self.assertEqual(
+            solution(
+                [
+                    "this is a simple example.",
+                    "the name is bond. james bond.",
+                    "remove every single e",
+                ],
+                ["simple", "bond", "e"],
+            ),
+            [
+                "this is a elpmis example.",
+                "the name is dnob. james dnob.",
+                "remove every single e",
+            ],
+        )
 
-    def test_2(self):
-        self.assertEqual(replace_substring("i love coding", "code", "craft"), "i love coding")
+    def test2(self):
+        self.assertEqual(
+            solution(
+                ["hello world!", "i am here", "python is love"],
+                ["world", "here", "love"],
+            ),
+            ["hello dlrow!", "i am ereh", "python is evol"],
+        )
 
-    def test_3(self):
-        self.assertEqual(replace_substring("it is a beautiful day", "beautiful", "gloomy"), "it is a gloomy day")
+    def test3(self):
+        self.assertEqual(
+            solution(
+                ["i am not a robot", "you are not alone", "we are all together"],
+                ["am", "are", "are"],
+            ),
+            ["i ma not a robot", "you era not alone", "we era all together"],
+        )
 
-    def test_4(self):
-        self.assertEqual(replace_substring("practice makes perfect", "perfect", "better"), "practice makes better")
+    def test4(self):
+        self.assertEqual(
+            solution(["apple", "ball", "cat"], ["a", "b", "c"]),
+            ["apple", "ball", "cat"],
+        )
 
-    def test_5(self):
-        self.assertEqual(replace_substring("keep calm and carry on", "carry on", "code on"), "keep calm and code on")
+    def test5(self):
+        self.assertEqual(
+            solution(["this is a test", "", "", "one more"], ["test", "a", "b", "one"]),
+            ["this is a tset", "", "", "eno more"],
+        )
 
-    def test_6(self):
-        self.assertEqual(replace_substring("long text long text", "long", "short"), "short text short text")
+    def test6(self):
+        self.assertEqual(
+            solution(
+                [
+                    "lower case sentence",
+                    "upper case Sentence",
+                    "another Sentence here",
+                    "final Sentence yay",
+                ],
+                ["sentence", "sentence", "sentence", "sentence"],
+            ),
+            [
+                "lower case ecnetnes",
+                "upper case Ecnetnes",
+                "another Ecnetnes here",
+                "final Ecnetnes yay",
+            ],
+        )
 
-    def test_7(self):
-        self.assertEqual(replace_substring("lower case", "lower", ""), " case")
+    def test7(self):
+        self.assertEqual(
+            solution(
+                [
+                    "this is a very very long sentence just to check the maximum limit of the sentence. see if it can handle the maximum characters or not.",
+                    "can it handle",
+                    "it or not",
+                    "let's see.",
+                ],
+                ["very", "handle", "it", "see"],
+            ),
+            [
+                "this is a yrev yrev long sentence just to check the maximum limit of the sentence. see if it can handle the maximum characters or not.",
+                "can it eldnah",
+                "ti or not",
+                "let's ees.",
+            ],
+        )
 
-    def test_8(self):
-        self.assertEqual(replace_substring("a quick brown fox jumps over a lazy dog", "jumps", "skips"), "a quick brown fox skips over a lazy dog")
+    def test8(self):
+        self.assertEqual(
+            solution(
+                ["just a string", "with some words", "and nothing else"],
+                ["just", "some", "nothing"],
+            ),
+            ["tsuj a string", "with emos words", "and gnihton else"],
+        )
 
-    def test_9(self):
-        self.assertEqual(replace_substring("this is a test", "this", "that"), "that is a test")
-
-    def test_10(self):
-        self.assertEqual(replace_substring("final test case", "case", "example"), "final test example")
 
 if __name__ == "__main__":
     unittest.main()

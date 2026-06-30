@@ -1,21 +1,49 @@
-def replace_substring(text, old, new):
-    result_pieces = []
-    current_index = 0
-    start_pos = text.find(old)
+def solution(sentences, words):
+    result_arr = []
 
-    len_old = len(old)
+    # 1. use zip for pairing up the lists with perfect index access for each loop
+    for sentence, word in zip(sentences, words):
+        sentence_lower = sentence.lower()
+        word_lower = word.lower()
+        start_pos = sentence_lower.find(word_lower)
+        curr_index = 0
+        result_pieces = []
 
-    while start_pos != -1:
-        result_pieces.append(text[current_index:start_pos]) # append the current up to start_pos index
+        while start_pos != -1:
+            result_pieces.append(sentence[curr_index:start_pos])
 
-        result_pieces.append(new) # append new word to replace old word
+            # Grab the original word slice exactly as it is cased
+            original_word_slice = sentence[start_pos:start_pos + len(word)]
+            flipped = original_word_slice[::-1]
 
-        current_index = start_pos + len_old # moves index to after the current word
+            # Check if the original word started with a capital
 
-        start_pos = text.find(old, current_index) # finds using old as keyword and starts searching from current index updated pos
+            if original_word_slice[0].isupper():
+                flipped = flipped.capitalize()
 
-    result_pieces.append(text[current_index:]) # appends everything that is after the last old word pos that is found
-    return "".join(result_pieces)
+            result_pieces.append(flipped)
+
+            curr_index = start_pos + len(word)
+            start_pos = sentence_lower.find(word_lower, curr_index)
+
+        result_pieces.append(sentence[curr_index:])
+        result_arr.append("".join(result_pieces))
+
+    return result_arr
 
 
-replace_substring("hello world", "world", "friend")
+print(
+    solution(
+        [
+            "this is a simple example.",
+            "the name is bond. james bond.",
+            "remove every single e",
+        ],
+        ["simple", "bond", "e"],
+    ),
+    [
+        "this is a elpmis example.",
+        "the name is dnob. james dnob.",
+        "remove every single e",
+    ],
+)
