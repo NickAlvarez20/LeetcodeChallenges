@@ -1,100 +1,29 @@
 import unittest
-from solution import solution
+from solution import spot_swaps
 
 
-class SolutionTests(unittest.TestCase):
+class SpotSwapsTests(unittest.TestCase):
     def test1(self):
-        self.assertEqual(
-            solution(
-                [
-                    "this is a simple example.",
-                    "the name is bond. james bond.",
-                    "remove every single e",
-                ],
-                ["simple", "bond", "e"],
-            ),
-            [
-                "this is a elpmis example.",
-                "the name is dnob. james dnob.",
-                "remove every single e",
-            ],
-        )
+        self.assertEqual(spot_swaps("hello", "hlelo"), [(1, "e", "l")])
 
     def test2(self):
-        self.assertEqual(
-            solution(
-                ["hello world!", "i am here", "python is love"],
-                ["world", "here", "love"],
-            ),
-            ["hello dlrow!", "i am ereh", "python is evol"],
-        )
+        self.assertEqual(spot_swaps("abcdef", "abcfed"), [])
 
     def test3(self):
-        self.assertEqual(
-            solution(
-                ["i am not a robot", "you are not alone", "we are all together"],
-                ["am", "are", "are"],
-            ),
-            ["i ma not a robot", "you era not alone", "we era all together"],
-        )
+        self.assertEqual(spot_swaps("goodbye", "godobye"), [(2, "o", "d")])
 
     def test4(self):
-        self.assertEqual(
-            solution(["apple", "ball", "cat"], ["a", "b", "c"]),
-            ["apple", "ball", "cat"],
-        )
+        self.assertEqual(spot_swaps("firsttest", "firtestst"), [])
 
     def test5(self):
-        self.assertEqual(
-            solution(["this is a test", "", "", "one more"], ["test", "a", "b", "one"]),
-            ["this is a tset", "", "", "eno more"],
-        )
+        self.assertEqual(spot_swaps("pythonista", "pyhtonista"), [(2, "t", "h")])
 
     def test6(self):
-        self.assertEqual(
-            solution(
-                [
-                    "lower case sentence",
-                    "upper case Sentence",
-                    "another Sentence here",
-                    "final Sentence yay",
-                ],
-                ["sentence", "sentence", "sentence", "sentence"],
-            ),
-            [
-                "lower case ecnetnes",
-                "upper case Ecnetnes",
-                "another Ecnetnes here",
-                "final Ecnetnes yay",
-            ],
-        )
+        self.assertEqual(spot_swaps("qwertyuiop", "qewrtyuiop"), [(1, "w", "e")])
 
     def test7(self):
         self.assertEqual(
-            solution(
-                [
-                    "this is a very very long sentence just to check the maximum limit of the sentence. see if it can handle the maximum characters or not.",
-                    "can it handle",
-                    "it or not",
-                    "let's see.",
-                ],
-                ["very", "handle", "it", "see"],
-            ),
-            [
-                "this is a yrev yrev long sentence just to check the maximum limit of the sentence. see if it can handle the maximum characters or not.",
-                "can it eldnah",
-                "ti or not",
-                "let's ees.",
-            ],
-        )
-
-    def test8(self):
-        self.assertEqual(
-            solution(
-                ["just a string", "with some words", "and nothing else"],
-                ["just", "some", "nothing"],
-            ),
-            ["tsuj a string", "with emos words", "and gnihton else"],
+            spot_swaps("hellothereworld", "helotlehreworld"), [(6, "h", "e")]
         )
 
 
