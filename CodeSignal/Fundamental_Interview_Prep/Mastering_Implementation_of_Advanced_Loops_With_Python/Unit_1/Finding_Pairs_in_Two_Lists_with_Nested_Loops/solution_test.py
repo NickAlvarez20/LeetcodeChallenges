@@ -1,47 +1,66 @@
 import unittest
 from solution import solution
 
+
 class SolutionTests(unittest.TestCase):
-    def test1(self):
-        self.assertEqual(solution([5, 1, 8, -2, 0], [3, 2, 7, 10, -1]), [(5, 3), (5, 2), (5, -1), (1, -1), (8, 3), (8, 2), (8, 7), (8, -1), (0, -1)])
+    def test_case_1(self):
+        arr1 = [2, 3, 16]
+        arr2 = [1, 9, 10]
+        expected_output = [(3, 1), (16, 9)]
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test2(self):
-        self.assertEqual(solution([3, 2, 1], [1, 2, 3]), [(3, 1), (3, 2), (2, 1)])
+    def test_case_2(self):
+        arr1 = [0]
+        arr2 = [0]
+        expected_output = [(0, 0)]
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test3(self):
-        self.assertEqual(solution([0], [0]), [])
+    def test_case_3(self):
+        arr1 = [4, 13, 23]
+        arr2 = [-4, -3, -24]
+        expected_output = [(4, -4), (4, -3), (13, -4)]
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test4(self):
-        self.assertEqual(solution([-5, -10, -15], [-20, -25, -30]), [(-5, -20), (-5, -25), (-5, -30), (-10, -20), (-10, -25), (-10, -30), (-15, -20), (-15, -25), (-15, -30)])
-        
-    def test5(self):
-        self.assertEqual(solution([1000], [999]), [(1000, 999)])
+    def test_case_4(self):
+        arr1 = [0, 1, 2, -100, 100]
+        arr2 = [-100, 100, 30, 0, -1, -2, -3]
+        expected_output = [
+            (0, 100),
+            (0, 0),
+            (1, 0),
+            (1, -1),
+            (2, -1),
+            (2, -2),
+            (-100, 100),
+            (100, -100),
+            (100, 0),
+        ]
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test6(self):
-        self.assertEqual(solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [-1, -2, -3, -4, -5, -6, -7, -8, -9, -10]), 
-                         [(1, -1), (1, -2), (1, -3), (1, -4), (1, -5), (1, -6), (1, -7), (1, -8), (1, -9), (1, -10), 
-                          (2, -1), (2, -2), (2, -3), (2, -4), (2, -5), (2, -6), (2, -7), (2, -8), (2, -9), (2, -10), 
-                          (3, -1), (3, -2), (3, -3), (3, -4), (3, -5), (3, -6), (3, -7), (3, -8), (3, -9), (3, -10), 
-                          (4, -1), (4, -2), (4, -3), (4, -4), (4, -5), (4, -6), (4, -7), (4, -8), (4, -9), (4, -10), 
-                          (5, -1), (5, -2), (5, -3), (5, -4), (5, -5), (5, -6), (5, -7), (5, -8), (5, -9), (5, -10), 
-                          (6, -1), (6, -2), (6, -3), (6, -4), (6, -5), (6, -6), (6, -7), (6, -8), (6, -9), (6, -10),
-                          (7, -1), (7, -2), (7, -3), (7, -4), (7, -5), (7, -6), (7, -7), (7, -8), (7, -9), (7, -10), 
-                          (8, -1), (8, -2), (8, -3), (8, -4), (8, -5), (8, -6), (8, -7), (8, -8), (8, -9), (8, -10), 
-                          (9, -1), (9, -2), (9, -3), (9, -4), (9, -5), (9, -6), (9, -7), (9, -8), (9, -9), (9, -10),
-                          (10, -1), (10, -2), (10, -3), (10, -4), (10, -5), (10, -6), (10, -7), (10, -8), (10, -9), (10, -10)])
+    def test_case_5(self):
+        arr1 = [100, 75, 36, 9, -25, -64, -100]
+        arr2 = [-1, 1, 24, 0, -1, -24]
+        expected_output = [(100, 0), (36, 0), (9, 0)]
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test7(self):
-        self.assertEqual(solution([-1, -2, -3, -4, -5, -6, -7, -8, -9, -10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [])
+    def test_case_6(self):
+        arr1 = []
+        arr2 = [1, 2, 3, 4]
+        expected_output = []
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test8(self):
-        self.assertEqual(solution([500, 200, -400, -700], [200, -300, 400, -500, 700]), [(500, 200), (500, -300), (500, 400), (500, -500), (200, -300), (200, -500), (-400, -500)])
+    def test_case_7(self):
+        arr1 = [1, 2, 3, 4]
+        arr2 = []
+        expected_output = []
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test9(self):
-        self.assertEqual(solution([-1000] * 50, [1000] * 50), [])
+    def test_case_8(self):
+        arr1 = []
+        arr2 = []
+        expected_output = []
+        self.assertEqual(solution(arr1, arr2), expected_output)
 
-    def test10(self):
-        self.assertEqual(solution([1000] * 50, [-1000] * 50), [(1000, -1000)])
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
