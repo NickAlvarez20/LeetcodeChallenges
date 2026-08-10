@@ -1,0 +1,1 @@
+# Placeholder for Drafting an Adventure Travel Plan
