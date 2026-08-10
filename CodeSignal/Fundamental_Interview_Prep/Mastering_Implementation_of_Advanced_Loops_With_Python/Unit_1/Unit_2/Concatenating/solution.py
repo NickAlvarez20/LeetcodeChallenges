@@ -14,5 +14,4 @@ def solution(sentence, c):
     return result_str
 
 
-
-print(solution("Python is a high-level programming language.", 'n'))
+print(solution("Python is a high-level programming language.", "n"))
