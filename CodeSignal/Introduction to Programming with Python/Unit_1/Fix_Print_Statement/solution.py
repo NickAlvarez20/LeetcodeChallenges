@@ -1,1 +1,1 @@
-# Placeholder for Lesson 3
+print("Hello, Programming World!")
