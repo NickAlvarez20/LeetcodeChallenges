@@ -1,5 +1,5 @@
 import unittest
-from solution import solution
+from CodeSignal.Fundamental_Interview_Prep.Mastering_Implementation_of_Advanced_Loops_With_Python.Unit_2.Even_Indexed_Chars_Odd_Len_Words.solution import solution
 
 
 class SolutionTests(unittest.TestCase):
