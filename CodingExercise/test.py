@@ -241,6 +241,7 @@ for i in range(0, 101):
 
 # print(merge(input_1, input_2))
 
+# --------------------------------------------------------------------------
 
 # 10. Split in halves
 # Split a single list into two equal halves.
@@ -261,3 +262,158 @@ for i in range(0, 101):
 
 
 # print(split_halves(input_arr))
+
+
+# --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
+
+
+# Strings
+
+
+# 1. The Pointer Swap (String Reversal)
+
+# string_example = 'The great warm up practice results in daily discipline'
+
+# # Two pointers and reverse using Python swap
+# left = 0
+# right = len(string_example) - 1
+# conv_list = list(string_example)
+
+# while left < right:
+#     conv_list[left], conv_list[right] = conv_list[right], conv_list[left]
+#     left += 1
+#     right -= 1
+
+# reversed_string = "".join(conv_list)
+# print(reversed_string)
+
+# --------------------------------------------------------------------------
+
+# 2. The Case Inverter
+# Goal: Convert lowercase letters to uppercase and vice versa without using built-in .toUpperCase() or .toLowerCase().
+
+# test_str = 'GeEkSfOrGeEkS'
+
+# # strings are immutable so need list
+# conv_str = list(test_str)
+# result = []
+
+# for char in conv_str:
+#     if char.isupper():
+#         temp = ord(char)
+#         new_char = temp + 32
+#         result.append(chr(new_char))
+#     elif char.islower():
+#         temp_2 = ord(char)
+#         new_char_2 = temp_2 - 32
+#         result.append(chr(new_char_2))
+#     else:
+#         result.append(char)
+
+# final_res = "".join(result)
+# print(final_res)
+
+
+# while index < len(chars_list):
+#     if chars_list[index].isupper():
+#         temp = ord(chars_list[index])
+#         conv_char = temp + 32
+#         lower_char = chr(conv_char)
+#         res.append(lower_char)
+#     elif chars_list[index].islower():
+#         temp = ord(chars_list[index])
+#         conv_char = temp - 32
+#         upper_char = chr(conv_char)
+#         res.append(upper_char)
+#     else:
+#         res.append(chars_list[index])
+#     index += 1
+
+
+# joined_chars = "".join(res)
+# print(joined_chars)
+
+test_str = "GeEkSfOrGeEkS"
+
+# immutable strings
+result = []
+
+for char in test_str:
+    if "A" <= char <= "Z":
+        temp = ord(char) + 32
+        result.append(chr(temp))
+    elif "a" <= char <= "z":
+        temp = ord(char) - 32
+        result.append(chr(temp))
+    else:
+        result.append(char)
+
+joined_chars = "".join(result)
+
+print(joined_chars)
+
+
+# --------------------------------------------------------------------------
+
+
+# Palindrome
+
+# Two pointers
+
+test_str_1 = "Palindrome"
+test_str_2 = "racecar"
+
+
+def check_palindrome(str):
+    # Two pointer approach
+    left = 0
+    right = len(str) - 1
+    is_palindrome = True
+
+    while left < right:
+        if str[left] != str[right]:
+            is_palindrome = False
+            break
+        left += 1
+        right -= 1
+
+    return is_palindrome
+
+
+def check_palindrome_for(str):
+    length = len(str)
+
+    for i in range(length // 2):
+        if str[i] != str[length - 1 - i]:
+            return False
+    return True
+
+
+def check_palindrome_for_var_2(str):
+    left = 0
+    right = len(str) - 1
+
+    for _ in str:
+        if left >= right:
+            break
+
+        if str[left] != str[right]:
+            return False
+
+        left += 1
+        right -= 1
+    return True
+
+
+print(check_palindrome(test_str_1))
+print(check_palindrome(test_str_2))
+
+print(check_palindrome_for(test_str_1))
+print(check_palindrome_for(test_str_2))
+
+print(check_palindrome_for_var_2(test_str_1))
+print(check_palindrome_for_var_2(test_str_2))
+
+
