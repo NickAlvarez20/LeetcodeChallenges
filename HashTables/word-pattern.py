@@ -22,7 +22,7 @@
 # SplitWord stores n elements taking O(n) space. dict_zip stores at most n unique key value pairs taking O(n) space. Therefore, the overall space complexity is O(n) allocated space. 
 
 # Code
-```python3 []
+
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         split_words = s.split(" ")
@@ -50,5 +50,3 @@ class Solution:
                 
 
 
-        
-```

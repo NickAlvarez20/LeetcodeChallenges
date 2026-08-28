@@ -19,7 +19,7 @@
 # 
 
 # Code
-```python3 []
+
 from collections import Counter
 
 class Solution:
@@ -48,5 +48,3 @@ class Solution:
 
         
 
-        
-```
